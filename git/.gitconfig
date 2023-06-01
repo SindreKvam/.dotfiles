@@ -1,3 +1,5 @@
+# https://github.com/aaronbates/dotfiles/blob/master/git/.gitconfig
+
 [alias]
 	# git add with cherry pick
 	ap = "!git add -p"
