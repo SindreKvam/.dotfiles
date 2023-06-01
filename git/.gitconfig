@@ -1,0 +1,30 @@
+[alias]
+	# git add with cherry pick
+	ap = "!git add -p"
+
+	# Print git log in a pretty way
+	l = log --pretty=oneline -n 20 --graph --abbrev-commit
+
+	# view short status
+	s = status -s
+
+[color]
+  	# Use colors in Git commands that are capable of colored output when
+  	# outputting to the terminal. (This is the default setting in Git ≥ 1.8.4.)
+  	ui = auto
+
+[color "branch"]
+  	current = yellow reverse
+  	local = yellow
+  	remote = green
+
+[color "diff"]
+  	meta = yellow bold
+  	frag = magenta bold # line info
+  	old = red # deletions
+  	new = green # additions
+
+[color "status"]
+  	added = green
+  	changed = yellow
+	untracked = red
