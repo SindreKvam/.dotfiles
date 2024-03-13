@@ -14,6 +14,7 @@ brew install git
 # Install useful brew packages
 brew install nmap
 brew install wakeonlan
+brew install alt-tab
 
 # Install fun brew packages
 brew install fortune
