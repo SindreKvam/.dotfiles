@@ -14,3 +14,6 @@ brew install git
 # Install useful brew packages
 brew install nmap
 brew install wakeonlan
+
+# Remove outdated versions from the cellar.
+brew cleanup
