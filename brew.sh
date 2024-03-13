@@ -17,6 +17,7 @@ brew install wakeonlan
 
 # Install fun brew packages
 brew install fortune
+brew install wget
 
 # Remove outdated versions from the cellar.
 brew cleanup
