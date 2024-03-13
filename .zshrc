@@ -1,7 +1,8 @@
 
 # Path to ohmyzsh installation
 export ZSH=~/.oh-my-zsh
-ZSH_THEME="robbyrussell"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="lambda"
 
 CASE_SENSITIVE="true"
 
