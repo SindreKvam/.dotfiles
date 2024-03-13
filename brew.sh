@@ -15,5 +15,8 @@ brew install git
 brew install nmap
 brew install wakeonlan
 
+# Install fun brew packages
+brew install fortune
+
 # Remove outdated versions from the cellar.
 brew cleanup
