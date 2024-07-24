@@ -12,9 +12,9 @@
 
     "notebook.lineNumbers": "on",
 
-    "editor.formatOnSave": true,
     "[python]": {
-        "editor.formatOnType": true,
+        "editor.formatOnSave": true,
         "editor.defaultFormatter": "ms-python.black-formatter"
     },
+    "black-formatter.args": ["--line-length", "90"]
 }
