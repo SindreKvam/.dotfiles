@@ -5,7 +5,7 @@
     "editor.semanticTokenColorCustomizations": {
         "enabled": true,
         "rules": {
-            "parameter": "#4F99C0",
+            "parameter": {"foreground":"#4F99C0", "italic": true},
             "property": "#CA9248"
         }
     },
