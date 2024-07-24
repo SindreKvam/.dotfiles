@@ -1,0 +1,20 @@
+{
+    // Create custom theme
+    // https://code.visualstudio.com/docs/getstarted/themes
+    "workbench.colorTheme": "Default Dark+",
+    "editor.semanticTokenColorCustomizations": {
+        "enabled": true,
+        "rules": {
+            "parameter": "#4F99C0",
+            "property": "#CA9248"
+        }
+    },
+
+    "notebook.lineNumbers": "on",
+
+    "editor.formatOnSave": true,
+    "[python]": {
+        "editor.formatOnType": true,
+        "editor.defaultFormatter": "ms-python.black-formatter"
+    },
+}
