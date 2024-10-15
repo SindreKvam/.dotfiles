@@ -34,6 +34,14 @@ elif [[ "$OSTYPE" == "darwin"* ]]; then
 
         ln -s $SCRIPTPATH/vscode/settings.json ~/Library/Application\ Support/Code/User/settings.json
         echo vscode settings.json symlink created
+	
+	mkdir -p ~/.config/yabai/
+	ln -s $SCRIPTPATH/yabai/yabairc ~/.config/yabai/yabairc
+	echo yabairc symlink created
+
+	mkdir -p ~/.config/skhd/
+	ln -s $SCRIPTPATH/skhd/skhdrc ~/.config/skhd/skhdrc
+	echo skhdrc symlink created
 
 else
         echo "Unknown OS"
