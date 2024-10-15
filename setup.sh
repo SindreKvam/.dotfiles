@@ -1,4 +1,4 @@
-
+#!/bin/bash
 # Run this script while you are in the dotfiles directory
 
 if [[ "$OSTYPE" == "linux-gnu"* ]]; then
