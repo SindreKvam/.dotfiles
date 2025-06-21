@@ -9,5 +9,5 @@ vim.opt.smartindent = true    -- Smart autoindenting on new lines
 vim.opt.wrap = false          -- Disable line wrapping
 vim.opt.hlsearch = true       -- Highlight search results
 
-vim.opt.colorcolumn = "80"      -- Highlight column 80
+vim.opt.colorcolumn = "100"      -- Highlight column
 
