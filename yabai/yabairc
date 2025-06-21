@@ -13,6 +13,13 @@ yabai -m config mouse_follows_focus off
 yabai -m config window_placement second_child
 
 
+color["focused"]="0xE0808080"
+color["normal"]="0x00010101"
+color["preselect"]="0xE02d74da"
+yabai -m config active_window_border_color  "${color["focused"]}"
+yabai -m config normal_window_border_color  "${color["normal"]}"
+yabai -m config insert_feedback_color       "${color["preselect"]}"
+
 # modifier for clicking and dragging with mouse
 yabai -m config mouse_modifier alt
 # set modifier + left-click drag to move window
