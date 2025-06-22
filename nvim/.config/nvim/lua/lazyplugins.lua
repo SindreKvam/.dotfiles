@@ -21,7 +21,6 @@ require("lazy").setup({
         'nvim-telescope/telescope.nvim', branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
-
     {
         "rose-pine/neovim",
         name = "rose-pine",
@@ -29,5 +28,16 @@ require("lazy").setup({
             vim.cmd("colorscheme rose-pine")
         end
     },
-
+    {
+        "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"
+    },
+    {
+        "mason-org/mason-lspconfig.nvim",
+        opts = {},
+        dependencies = {
+            { "mason-org/mason.nvim", opts = {} },
+            "neovim/nvim-lspconfig",
+        },
+    },
 })
+
