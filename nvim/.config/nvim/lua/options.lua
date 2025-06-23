@@ -11,5 +11,18 @@ vim.opt.hlsearch = true       -- Highlight search results
 
 vim.opt.scrolloff = 8
 
-vim.opt.colorcolumn = "100"      -- Highlight column
+vim.opt.textwidth = 80
+vim.opt.colorcolumn = "80,100"   -- Highlight column
+
+-- Warning colors when length exceeds recommended length
+vim.cmd [[highlight OverLength ctermbg=darkred guibg=#592929]]
+
+local function highlight_overlength()
+    local col = vim.opt.textwidth:get()
+    vim.fn.matchadd("Overlength", "\\%>" .. col .. "v.", 100)
+end
+
+vim.api.nvim_create_autocmd( {"InsertLeave","BufWinEnter"}, {
+    callback = highlight_overlength,
+})
 
