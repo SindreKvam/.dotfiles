@@ -29,7 +29,10 @@ require("lazy").setup({
         end
     },
     {
-        "nvim-treesitter/nvim-treesitter", branch = 'master', lazy = false, build = ":TSUpdate"
+        "nvim-treesitter/nvim-treesitter",
+        branch = 'master',
+        lazy = false,
+        build = ":TSUpdate"
     },
     {
         "mason-org/mason-lspconfig.nvim",
