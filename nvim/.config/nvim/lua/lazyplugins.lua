@@ -39,5 +39,8 @@ require("lazy").setup({
             "neovim/nvim-lspconfig",
         },
     },
+    {
+        "lewis6991/gitsigns.nvim",
+    },
 })
 
