@@ -43,6 +43,21 @@ require("lazy").setup({
         },
     },
     {
+        "hrsh7th/nvim-cmp",
+        dependencies = {
+            "hrsh7th/cmp-nvim-lsp",
+            "hrsh7th/cmp-buffer",
+            "hrsh7th/cmp-path",
+            "hrsh7th/cmp-cmdline",
+            "hrsh7th/nvim-cmp",
+            -- Snippet
+            "hrsh7th/vim-vsnip",
+            "L3MON4D3/LuaSnip",
+            "rafamadriz/friendly-snippets",
+            "onsails/lspkind.nvim",
+        },
+    },
+    {
         "lewis6991/gitsigns.nvim",
     },
     {
