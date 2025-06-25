@@ -26,3 +26,9 @@ vim.api.nvim_create_autocmd( {"InsertLeave","BufWinEnter"}, {
     callback = highlight_overlength,
 })
 
+
+-- Diagnostics configuration
+vim.diagnostic.config({
+    virtual_text = true,
+})
+
