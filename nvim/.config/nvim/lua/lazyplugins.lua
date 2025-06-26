@@ -6,7 +6,7 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
     if vim.v.shell_error ~= 0 then
         vim.api.nvim_echo({
             { "Failed to clone lazy.nvim:\n", "ErrorMsg" },
-            { out, "WarningMsg" },
+            { out,                            "WarningMsg" },
             { "\nPress any key to exit..." },
         }, true, {})
         vim.fn.getchar()
@@ -18,7 +18,8 @@ vim.opt.rtp:prepend(lazypath)
 require("lazy").setup({
 
     {
-        'nvim-telescope/telescope.nvim', branch = '0.1.x',
+        'nvim-telescope/telescope.nvim',
+        branch = '0.1.x',
         dependencies = { 'nvim-lua/plenary.nvim' }
     },
     {
@@ -67,5 +68,7 @@ require("lazy").setup({
         'stevearc/conform.nvim',
         opts = {},
     },
+    {
+        "nvim-tree/nvim-tree.lua",
+    },
 })
-
