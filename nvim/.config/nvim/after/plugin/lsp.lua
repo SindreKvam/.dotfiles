@@ -33,7 +33,7 @@ cmp.setup({
         end,
     },
     formatting = {
-        fields = {"abbr", "kind", "menu"},
+        fields = { "abbr", "kind", "menu" },
         expandable_indicator = true,
         format = lspkind.cmp_format({
             -- mode = 'symbol', -- show only symbol annotations
@@ -42,8 +42,7 @@ cmp.setup({
             show_labeldetails = true, -- show labeldetails in menu. disabled by default
             -- the function below will be called before any actual modifications from lspkind
             -- so that you can provide more controls on popup customization. (see [#30](https://github.com/onsails/lspkind-nvim/pull/30))
-            before = function (entry, vim_item)
-
+            before = function(entry, vim_item)
                 return vim_item
             end
         }),
@@ -61,7 +60,7 @@ cmp.setup({
     }),
     sources = cmp.config.sources({
         { name = 'nvim_lsp' },
-        { name = 'vsnip' }, -- For vsnip users.
+        { name = 'vsnip' },   -- For vsnip users.
         { name = 'luasnip' }, -- For luasnip users.
         -- { name = 'ultisnips' }, -- For ultisnips users.
         -- { name = 'snippy' }, -- For snippy users.
@@ -79,7 +78,7 @@ cmp.setup({
         { name = 'buffer' },
     })
 })
-require("cmp_git").setup() ]]-- 
+require("cmp_git").setup() ]] --
 
 -- Use buffer source for `/` and `?` (if you enabled `native_menu`, this won't work anymore).
 cmp.setup.cmdline({ '/', '?' }, {
@@ -99,4 +98,3 @@ cmp.setup.cmdline(':', {
     }),
     matching = { disallow_symbol_nonprefix_matching = false }
 })
-
