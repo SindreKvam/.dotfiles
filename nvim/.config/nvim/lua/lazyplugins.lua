@@ -63,5 +63,9 @@ require("lazy").setup({
     {
         "folke/which-key.nvim",
     },
+    {
+        'stevearc/conform.nvim',
+        opts = {},
+    },
 })
 
