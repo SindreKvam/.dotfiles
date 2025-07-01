@@ -26,11 +26,13 @@ vim.lsp.config("lua_ls", {
 })
 
 -- Python-LSP config
+-- This config is only for linting
+-- See conform.lua for formatting
 vim.lsp.config("pylsp", {
 	settings = {
 		pylsp = {
 			plugins = {
-				pylint = { enabled = true },
+				pylint = { enabled = false },
 				ruff = { enabled = true },
 				black = { enabled = false },
 				flake8 = { enabled = false },
