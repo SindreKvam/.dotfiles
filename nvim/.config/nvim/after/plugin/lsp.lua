@@ -31,7 +31,8 @@ vim.lsp.config("pylsp", {
 		pylsp = {
 			plugins = {
 				pylint = { enabled = true },
-				black = { enabled = true },
+				ruff = { enabled = true },
+				black = { enabled = false },
 				flake8 = { enabled = false },
 				pycodestyle = { enabled = false },
 				pyflakes = { enabled = false },
