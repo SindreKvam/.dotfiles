@@ -102,8 +102,6 @@ source $ZSH/oh-my-zsh.sh
 # - $ZSH_CUSTOM/macos.zsh
 # For a full list of active aliases, run `alias`.
 
-alias gs="git status"
-alias gc="git commit -m"
 alias glg="git log --graph --oneline --decorate --all"
 
 
