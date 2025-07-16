@@ -10,6 +10,9 @@ vim.opt.hlsearch = true -- Highlight search results
 
 vim.opt.scrolloff = 8
 
+-- Fixes gitsigns jumping around by enabling signcolumn
+vim.opt.signcolumn = "yes"
+
 vim.opt.textwidth = 100
 vim.opt.colorcolumn = "100" -- Highlight column
 
