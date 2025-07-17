@@ -124,6 +124,9 @@ bindsym Mod1+Shift+minus move scratchpad
 # If there are multiple scratchpad windows, this command cycles through them.
 bindsym Mod1+minus scratchpad show
 
+# Lock the screen using i3lock
+bindsym Mod1+control+l exec i3lock -fe --image ~/Pictures/white-space.png
+
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1"
