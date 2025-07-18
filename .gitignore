@@ -2,4 +2,5 @@
 tmux/.config/tmux/plugins/
 .DS_Store
 
-.zcompdump*
+*.zhistory
+*.zcompdump*
