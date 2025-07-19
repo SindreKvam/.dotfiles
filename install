@@ -7,3 +7,9 @@ do
     stow $folder
 done
 popd
+
+# If hyprland config was involved, reload
+if [[ "$STOW_FOLDERS" == *"hypr"* ]] then
+    echo "Reloading Hyprland..."
+    hyprctl reload
+fi
