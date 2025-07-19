@@ -10,7 +10,9 @@
 
     "modules-left": [
         "custom/Arch-Logo",
-        "clock"
+        "clock",
+        "custom/playerctrl",
+        "custom/playerlabel",
     ],
 
     "modules-center": [
@@ -40,11 +42,43 @@
         "format-alt": "{:%Y-%m-%d}"
     },
 
+    "custom/playerctrl": {
+        "format": "{icon}",
+        "return-type": "json",
+        "max-length": 64,
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}} - {{artist}}\", \"tooltip\": \"{{playerName}}: {{markup_escape(title)}}\",\"alt\":\"{{status}}\"}' -F",
+        "format-icons": {
+            "Playing": "<span foreground='#E5B9C6'> Playing</span>",
+            "Paused": "<span foreground='#928374'> Paused</span>"
+        }
+    },
+    "custom/playerlabel": {
+        "format": "<span>{}</span>",
+        "return-type": "json",
+        "max-length": 48,
+        "exec": "playerctl -a metadata --format '{\"text\": \"{{markup_escape(title)}} - {{artist}}\", \"tooltip\": \"{{playerName}}: {{markup_escape(title)}}\"}' -F",
+        // "on-click-middle": "playerctl play-pause",
+        // "on-click": "playerctl previous",
+        // "on-click-right": "playerctl next",
+        "format-icons": {
+            "Playing": "<span foreground='#E5B9C6'>  </span>",
+            "Paused": "<span foreground='#928374'>  </span>"
+        }
+    },
+
     "hyprland/workspaces": {
         "on-click": "activate",
         "disable-scroll": "true",
         "persistent-workspaces": {
             "*": [1,2,3,4,5],
+        },
+        "format": "{icon}",
+        "format-icons": {
+            "1": "󰈹",
+            "2": "",
+            "3": "",
+            "4": "",
+            "5": "",
         },
     },
 
