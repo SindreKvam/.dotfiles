@@ -1,0 +1,45 @@
+#!/usr/bin/env bash
+
+get_icon() {
+    case "$1" in
+        spotify) echo "󰓇" ;;
+        vlc) echo "🎬" ;;
+        firefox) echo "🦊" ;;
+        mpv) echo "📺" ;;
+        chromium|chrome) echo "🌐" ;;
+        *) echo "🎶" ;;
+    esac
+}
+
+players=$(playerctl -l 2>/dev/null)
+[ -z "$players" ] && notify-send "Playerctl" "No media players found" && exit 0
+
+declare -A player_map
+entries=()
+
+while IFS= read -r player; do
+    base_player="${player%%.*}"
+    icon=$(get_icon "$base_player")
+    status=$(playerctl -p "$player" status 2>/dev/null)
+    artist=$(playerctl -p "$player" metadata artist 2>/dev/null)
+    title=$(playerctl -p "$player" metadata title 2>/dev/null)
+
+    [ -z "$artist" ] && artist="Unknown Artist"
+    [ -z "$title" ] && title="Unknown Title"
+    [ -z "$status" ] && status="Unknown"
+
+    entry="$icon $base_player [$status] - $artist: $title"
+    entries+=("$entry")
+    player_map["$entry"]="$player"
+done <<< "$players"
+
+# Join array into newline-separated string, no trailing newline
+menu=$(printf '%s\n' "${entries[@]}")
+
+# Run wofi with cleaned-up menu
+choice=$(echo "$menu" | wofi --dmenu -p "Media Players" -i)
+
+[ -z "$choice" ] && exit 0
+
+selected_player="${player_map["$choice"]}"
+[ -n "$selected_player" ] && playerctl -p "$selected_player" play-pause
