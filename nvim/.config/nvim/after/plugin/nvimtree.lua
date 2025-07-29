@@ -25,6 +25,10 @@ require("nvim-tree").setup({
             quit_on_open = false,
         },
     },
+    git = {
+        enable = true,
+        ignore = false,
+    },
 })
 
 vim.keymap.set({ "n" }, "<leader>ex", ":NvimTreeOpen<Cr>", { desc = "Open explorer" })
