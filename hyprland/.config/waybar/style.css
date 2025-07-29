@@ -1,19 +1,16 @@
 * {
     /* `otf-font-awesome` is required to be installed for icons */
-    border: none;
-    border-radius: 0;
     font-family: AdwaitaMononerdFontMono, FontAwesome, Roboto, Helvetica, Arial, sans-serif;
-    font-size: 16px;
-    font-weight: bold;
+    font-size: 20px;
     min-height: 0;
+    padding-right: 2px;
+    padding-left: 2px;
 }
 
-window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+#waybar {
+    background: transparent;
     color: #cdd6f4;
-    transition-property: background-color;
-    transition-duration: .5s;
+    margin: 2px 2px;
 }
 
 window#waybar.hidden {
@@ -31,33 +28,20 @@ button {
 /* https://github.com/Alexays/Waybar/wiki/FAQ#the-workspace-buttons-have-a-strange-hover-effect */
 button:hover {
     background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
+    box-shadow: inset 0 -3px #cdd6f4;
 }
 
 
 #custom-playerctrl {
-    margin-left: 10px;
-    margin-right: 5px;
-}
-
-#custom-playerctrl {
-    margin-right: 20px;
+    margin-left: 20px;
+    margin-right: 10px;
 }
 
 /* ---------- WORKSPACES ---------- */
-#workspaces button.active label,
-#workspaces button.persistent label {
-    font-size: 32px;
-}
-
 #workspaces {
-    background: #1c1c29;
-    margin: 5px 5px 5px 5px;
+    background: #101010;
+    margin: 5px;
     border-radius: 10px;
-    margin-right: 10px;
-    margin-left: 10px;
-    padding: 0px 5px;
-    border: solid 0px #ff0000;
 }
 
 #workspaces button {
@@ -80,106 +64,19 @@ button:hover {
 #battery,
 #cpu,
 #memory,
-#disk,
-#temperature,
 #backlight,
 #network,
 #pulseaudio,
-#wireplumber,
-#custom-media,
 #tray,
 #mode,
 #idle_inhibitor,
 #scratchpad,
 #power-profiles-daemon,
 #custom-power,
-#mpd {
-    padding: 0 10px;
+#custom-lock {
+    background-color: #101010;
     color: #ffffff;
-}
-
-#window,
-#workspaces {
-    margin: 0 8px;
-}
-
-/* If workspaces is the leftmost module, omit left margin */
-.modules-left>widget:first-child>#workspaces {
-    margin-left: 0;
-}
-
-/* If workspaces is the rightmost module, omit right margin */
-.modules-right>widget:last-child>#workspaces {
-    margin-right: 0;
-}
-
-
-
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
-}
-
-/* Using steps() instead of linear as a timing function to limit cpu usage */
-#battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
-    animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
-    animation-iteration-count: infinite;
-    animation-direction: alternate;
-}
-
-
-label:focus {
-    background-color: #000000;
-}
-
-
-#tray>.passive {
-    -gtk-icon-effect: dim;
-}
-
-#tray>.needs-attention {
-    -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
-}
-
-#privacy {
-    padding: 0;
-}
-
-#privacy-item {
-    padding: 0 5px;
-    color: white;
-}
-
-#privacy-item.screenshare {
-    background-color: #cf5700;
-}
-
-#privacy-item.audio-in {
-    background-color: #1ca000;
-}
-
-#privacy-item.audio-out {
-    background-color: #0069d4;
-}
-
-/* -------- Sizing of icons --------- */
-#custom-Arch-Logo,
-#custom-power {
-    font-size: 32px;
+    margin: 5px 0;
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
 }
