@@ -21,6 +21,7 @@ font pango:monospace 8
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 
+exec --no-startup-id setxkbmap -option caps:swapescape
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
 # they are included here as an example. Modify as you see fit.
 
@@ -54,7 +55,7 @@ floating_modifier Mod1
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym Mod1+Return exec i3-sensible-terminal
+bindsym Mod1+Return exec wezterm
 
 # kill focused window
 bindsym Mod1+Shift+q kill
@@ -116,13 +117,6 @@ bindsym Mod1+a focus parent
 
 # focus the child container
 #bindsym Mod1+d focus child
-
-# move the currently focused window to the scratchpad
-bindsym Mod1+Shift+minus move scratchpad
-
-# Show the next scratchpad window or hide the focused scratchpad window.
-# If there are multiple scratchpad windows, this command cycles through them.
-bindsym Mod1+minus scratchpad show
 
 # Lock the screen using i3lock
 bindsym Mod1+control+l exec i3lock -fe --image ~/Pictures/white-space.png
