@@ -181,12 +181,6 @@ mode "resize" {
         bindsym $up         resize shrink height 10 px or 10 ppt
         bindsym $right      resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left        resize shrink width 10 px or 10 ppt
-        bindsym Down        resize grow height 10 px or 10 ppt
-        bindsym Up          resize shrink height 10 px or 10 ppt
-        bindsym Right       resize grow width 10 px or 10 ppt
-
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
         bindsym Escape mode "default"
@@ -203,18 +197,7 @@ bar {
 	workspace_min_width 24
 	padding 2px 8px 2px 8px
 	strip_workspace_numbers yes
-
-	colors {
-	background #141c21
-	statusline #141c21
-	separator #141c21
-
-	# colour of border, background, and text
-	focused_workspace #141c21 #d12f2c #93a1a1
-	active_workspace #141c21 #141c21 #93a1a1
-	inactive_workspace #141c21 #141c21 #93a1a1
-	urgent_workspace #141c21 #b08500 #93a1a1
-	}
+    tray_output primary
 }
 
 #######################################################################
