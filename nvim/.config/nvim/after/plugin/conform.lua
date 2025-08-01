@@ -1,13 +1,10 @@
 local conform = require("conform")
+conform.setup()
 
-conform.setup({
-	format_on_save = {
-		-- These options will be passed to conform.format()
-		timeout_ms = 500,
-		lsp_format = "fallback",
-	},
-	formatters_by_ft = {
-		lua = { "stylua" },
-		python = { "ruff_format" },
-	},
-})
+vim.keymap.set("n", "<leader>saf", function()
+    conform.format({ lsp_fallback = true })
+end, { desc = "Format document" })
+
+vim.keymap.set("v", "<leader>saf", function()
+    conform.format({ lsp_fallback = true })
+end, { desc = "Format selection" })

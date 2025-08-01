@@ -6,13 +6,25 @@ mason_lspconfig.setup({
 	ensure_installed = {
 		"pylsp",
 		"lua_ls",
+		"vtsls",
 	},
 	handlers = {
 		function(server_name)
 			require("lspconfig")[server_name].setup({})
 		end,
 	},
+	exclude = {
+		"clangd",
+		"rust_analyzer",
+	},
 })
+
+if vim.fn.executable("clangd") then
+	vim.lsp.enable("clangd")
+end
+if vim.fn.executable("rust_analyzer") then
+	vim.lsp.enable("rust_analyzer")
+end
 
 -- Remove warning for undefined vim
 vim.lsp.config("lua_ls", {
