@@ -20,6 +20,7 @@ require("lazy").setup({
 	"lewis6991/gitsigns.nvim",
 	"folke/which-key.nvim",
 	"nvim-tree/nvim-tree.lua",
+    { "rcarriga/nvim-dap-ui", dependencies = {"mfussenegger/nvim-dap", "nvim-neotest/nvim-nio"} },
 	{ "stevearc/conform.nvim", opts = {} },
 	{ "nvim-tree/nvim-web-devicons", opts = {} },
 
