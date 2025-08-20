@@ -21,6 +21,7 @@ require("lazy").setup({
     "folke/which-key.nvim",
     "nvim-tree/nvim-tree.lua",
     "sakhnik/nvim-gdb",
+    "kylechui/nvim-surround",
     { "rcarriga/nvim-dap-ui",        dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } },
     { "stevearc/conform.nvim",       opts = {} },
     { "nvim-tree/nvim-web-devicons", opts = {} },
