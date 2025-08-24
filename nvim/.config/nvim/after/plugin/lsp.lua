@@ -56,13 +56,31 @@ vim.lsp.config("pylsp", {
 	},
 })
 
+
+-- luasnip
+-- Add friendly snippets
+require("luasnip.loaders.from_vscode").lazy_load()
+-- Add custom snippets
+require("luasnip.loaders.from_vscode").lazy_load({
+    paths = { "~/.config/nvim/snippets" }
+})
+
 -- setup cmp
 cmp.setup({
+    sources = cmp.config.sources({
+		{ name = "nvim_lsp" },
+		{ name = "nvim-lsp-signature-help" },
+		-- { name = "vsnip" }, -- For vsnip users.
+		{ name = "luasnip" }, -- "saadparwaiz1/cmp_luasnip"
+		{ name = "buffer" },
+	}),
+
 	snippet = {
 		expand = function(args)
 			require("luasnip").lsp_expand(args.body) -- for `luasnip` users.
 		end,
 	},
+
 	formatting = {
 		fields = { "abbr", "kind", "menu" },
 		expandable_indicator = true,
@@ -71,33 +89,23 @@ cmp.setup({
 			-- maxwidth = 50,
 			-- ellipsis_char = '...', -- when popup menu exceed maxwidth, the truncated part would show ellipsis_char instead (must define maxwidth first)
 			show_labeldetails = true, -- show labeldetails in menu. disabled by default
-			-- the function below will be called before any actual modifications from lspkind
-			-- so that you can provide more controls on popup customization. (see [#30](https://github.com/onsails/lspkind-nvim/pull/30))
 			before = function(entry, vim_item)
 				return vim_item
 			end,
 		}),
 	},
+
 	window = {
 		completion = cmp.config.window.bordered(),
 		documentation = cmp.config.window.bordered(),
 	},
+
 	mapping = cmp.mapping.preset.insert({
 		["<C-b>"] = cmp.mapping.scroll_docs(-4),
 		["<C-f>"] = cmp.mapping.scroll_docs(4),
 		["<C-Space>"] = cmp.mapping.complete(),
 		["<C-e>"] = cmp.mapping.abort(),
 		["<CR>"] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
-	}),
-	sources = cmp.config.sources({
-		{ name = "nvim_lsp" },
-		{ name = "nvim-lsp-signature-help" },
-		{ name = "vsnip" }, -- For vsnip users.
-		{ name = "luasnip" }, -- For luasnip users.
-		-- { name = 'ultisnips' }, -- For ultisnips users.
-		-- { name = 'snippy' }, -- For snippy users.
-	}, {
-		{ name = "buffer" },
 	}),
 })
 
