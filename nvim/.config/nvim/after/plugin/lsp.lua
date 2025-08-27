@@ -4,7 +4,8 @@ local lspkind = require("lspkind")
 
 mason_lspconfig.setup({
 	ensure_installed = {
-		"pylsp",
+		"pylsp", -- python LSP server
+        "ruff", -- Linter and formatter for python
 		"lua_ls",
 		"vtsls",
 	},
