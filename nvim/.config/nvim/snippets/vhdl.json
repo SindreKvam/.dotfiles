@@ -1,0 +1,22 @@
+{
+    "ieee-library" : {
+        "prefix": "ieee",
+        "body": [
+            "library ieee;",
+            "use ieee.std_logic_1162.all;",
+            "use ieee.numeric_std.all;"
+        ]
+    },
+    "entity": {
+        "prefix": "entity",
+        "body": [
+            "entity ${1:MyModule} is",
+            "\tport(",
+            "\t\t${2:clk} : in std_logic;",
+            "\t\t${3:reset} : in std_logic",
+            "\t\t${4:_} : $5",
+            "\t);",
+            "end entity $1;"
+        ]
+    }
+}
