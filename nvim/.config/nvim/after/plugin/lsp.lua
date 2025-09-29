@@ -112,10 +112,12 @@ cmp.setup({
             if cmp.visible() then
                 if luasnip.expandable() then
                     luasnip.expand()
-                else
+                elseif cmp.get_selected_entry() then -- If entry has been selected
                     cmp.confirm({
-                        select = true,
+                        select = false,              -- Do not select word by just pressing enter
                     })
+                else
+                    fallback()
                 end
             else
                 fallback()
