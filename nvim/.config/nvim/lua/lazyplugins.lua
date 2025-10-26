@@ -71,4 +71,5 @@ require("lazy").setup({
             "onsails/lspkind.nvim",
         },
     },
+    { "Vigemus/iron.nvim" }, -- Interactive Repls Over Neovim
 })
