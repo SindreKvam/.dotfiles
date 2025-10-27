@@ -16,7 +16,7 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
-    "navarasu/onedark.nvim",
+    "olimorris/onedarkpro.nvim",
     "lewis6991/gitsigns.nvim",
     "folke/which-key.nvim",
     "nvim-tree/nvim-tree.lua",
