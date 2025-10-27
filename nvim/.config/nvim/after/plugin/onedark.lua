@@ -1,22 +1,48 @@
+local color = require("onedarkpro.helpers")
+local config = require("onedarkpro.config")
+local colors = color.get_colors()
+
+
+-- vim.api.nvim_set_hl(0, "@variable.python", { link = "@variable", priority = 80 })
+
 require("onedarkpro").setup({
-    colors = {},           -- Override default colors or create your own
-    highlights = {},       -- Override default highlight groups or create your own
-    styles = {             -- For example, to apply bold and italic, use "bold,italic"
-        types = "NONE",    -- Style that is applied to types
-        methods = "NONE",  -- Style that is applied to methods
-        numbers = "NONE",  -- Style that is applied to numbers
-        strings = "NONE",  -- Style that is applied to strings
-        comments = "italic", -- Style that is applied to comments
-        keywords = "NONE", -- Style that is applied to keywords
-        constants = "bold", -- Style that is applied to constants
-        functions = "NONE", -- Style that is applied to functions
-        operators = "NONE", -- Style that is applied to operators
-        variables = "NONE", -- Style that is applied to variables
-        parameters = "NONE", -- Style that is applied to parameters
+    colors = { -- Override default colors or create your own
+        pleasant_brown = "#CA9248",
+        dark_blue = "#4F99C0"
+    },
+
+    highlights = { -- Override default highlight groups or create your own
+
+        ["@variable"] = { fg = colors.red, style = config.styles.variables },
+
+        -- Python specific
+        ["@variable.parameter.python"] = { fg = "${pleasant_brown}", italic = true },
+        ["@odp.variable.parameter.python"] = { link = "@variable.parameter.python" },
+        ["@param"] = { link = "@variable.parameter.python" },
+
+        -- VHDL specific
+        -- These queries have been manually added in ~/.config/nvim/queries/vhdl/highlights.scm
+        ["@generic.vhdl"] = { bold = true, italic = true },
+        ["@port.vhdl"] = { fg = "${pleasant_brown}", italic = true },
+    },
+
+    styles = {                 -- For example, to apply bold and italic, use "bold,italic"
+        types = "NONE",        -- Style that is applied to types
+        methods = "NONE",      -- Style that is applied to methods
+        numbers = "NONE",      -- Style that is applied to numbers
+        strings = "NONE",      -- Style that is applied to strings
+        comments = "italic",   -- Style that is applied to comments
+        keywords = "NONE",     -- Style that is applied to keywords
+        constants = "NONE",    -- Style that is applied to constants
+        functions = "NONE",    -- Style that is applied to functions
+        operators = "NONE",    -- Style that is applied to operators
+        variables = "NONE",    -- Style that is applied to variables
+        parameters = "NONE",   -- Style that is applied to parameters
         conditionals = "NONE", -- Style that is applied to conditionals
         virtual_text = "NONE", -- Style that is applied to virtual text
     },
-    filetypes = {          -- Override which filetype highlight groups are loaded
+
+    filetypes = { -- Override which filetype highlight groups are loaded
         c = true,
         comment = true,
         go = true,
@@ -39,6 +65,7 @@ require("onedarkpro").setup({
         xml = true,
         yaml = true,
     },
+
     plugins = { -- Override which plugin highlight groups are loaded
         aerial = true,
         barbar = true,
@@ -88,10 +115,10 @@ require("onedarkpro").setup({
     },
 
     options = {
-        cursorline = false,             -- Use cursorline highlighting?
-        transparency = false,           -- Use a transparent background?
-        terminal_colors = true,         -- Use the theme's colors for Neovim's :terminal?
-        lualine_transparency = false,   -- Center bar transparency?
+        cursorline = false,                 -- Use cursorline highlighting?
+        transparency = false,               -- Use a transparent background?
+        terminal_colors = true,             -- Use the theme's colors for Neovim's :terminal?
+        lualine_transparency = false,       -- Center bar transparency?
         highlight_inactive_windows = false, -- When the window is out of focus, change the normal background?
     }
 })
