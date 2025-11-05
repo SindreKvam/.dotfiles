@@ -14,7 +14,12 @@ export SAVEHIST=10000                   # Maximum events in history file
 export TERM="xterm-256color"
 
 # Add to PATH
-export PATH="/home/sindrekvam/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/home/linuxbrew/.linuxbrew/bin"
+
+# Golang
+export PATH="$PATH:/usr/local/go/bin"
+
+# Rust
 export PATH="$PATH:$HOME/.cargo/bin"
 . "$HOME/.cargo/env"
