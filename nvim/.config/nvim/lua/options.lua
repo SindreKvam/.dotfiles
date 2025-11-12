@@ -7,8 +7,13 @@ vim.opt.expandtab = true -- Use spaces instead of tabs
 vim.opt.smartindent = true -- Smart autoindenting on new lines
 vim.opt.wrap = false -- Disable line wrapping
 vim.opt.hlsearch = true -- Highlight search results
+vim.opt.scrolloff = 8 -- Show x lines under / over marker even at bottom/top of file.
 
-vim.opt.scrolloff = 8
+-- Folds
+vim.opt.foldcolumn = "1"
+-- vim.opt.foldmethod = "expr"
+-- vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+
 
 -- Fixes gitsigns jumping around by enabling signcolumn
 vim.opt.signcolumn = "yes"
