@@ -7,3 +7,7 @@ style = "Regular"
 
 [window]
 opacity = 0.9
+
+[terminal.shell]
+program = "/bin/zsh"
+args = ["-l"]
