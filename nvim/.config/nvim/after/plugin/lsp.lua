@@ -33,12 +33,29 @@ if vim.fn.executable("gofmt") then
 end
 
 vim.lsp.config("clangd", {
-    cmd = {
-        "clangd",
-        "--background-index",
-        "-j=4", -- Limit to not use all cores
-        "--clang-tidy",
-    },
+	cmd = {
+		"clangd",
+		"--background-index",
+		"-j=4", -- Limit to not use all cores
+		"--clang-tidy",
+	},
+})
+
+-- Use pyright for go-to-definition hover and autocomplete
+-- Use ruff for linting and formatting
+vim.lsp.config("pyright", {
+	settings = {
+		pyright = {
+			-- Rely on Ruff for organizing imports
+			disableOrganizeImports = true,
+		},
+		python = {
+			analysis = {
+				-- Ignore all files for analysis to let Ruff handle linting diagnostics exclusively
+				ignore = { "*" },
+			},
+		},
+	},
 })
 
 -- Remove warning for undefined vim
